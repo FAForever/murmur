@@ -11,12 +11,4 @@ dbOpts=
 EOF
 
 /usr/sbin/murmurd -supw $SUPERUSER_PASSWORD
-
-while true; do
-  if pgrep -f murmurd 1> /dev/null; then
-    sleep 1
-  else
-    echo SERVER CRASHED
-    /usr/sbin/murmurd -v -fg
-  fi
-done
+/usr/sbin/murmurd -v -fg
